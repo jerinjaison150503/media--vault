@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    
+    <nav>
+        <!-- Navbar content here -->
+    </nav>
+    <div class="main">
+        <div class="gradient-background">
+            <div class="content">
+                <div class="login-container"> <!-- Updated class -->
+                  <h2>User Register</h2>
+                  <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder=" Name" name="name" required>
+                    <input type="text" pattern="^[a-zA-Z0-9.]+@gmail\.com$" placeholder=" Email" name="email" required>
+                    <input type="password" pattern="^[A-Z][a-zA-Z0-9!@#$%^&*_+\-?/]{7,}$" placeholder="Password" name="password" required>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox">
+                            Remember me
+                        </label>
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <button type="submit">Register</button>
+                  </form>
+                  <p>Do have an account? <a href="../log">Login</a></p>
+                  <!-- <p>Admin  <a href="../admlogin">Login</a></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
